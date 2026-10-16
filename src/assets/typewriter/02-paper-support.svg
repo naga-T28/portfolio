@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="02-paper-support">
+<title>固定の紙背面支持板</title>
+<defs><linearGradient id="02-paper-support-tw-front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#363d3d"/>
+      <stop offset=".09" stop-color="#1d2424"/>
+      <stop offset=".35" stop-color="#090d0d"/>
+      <stop offset=".78" stop-color="#060909"/>
+      <stop offset=".94" stop-color="#171c1c"/>
+      <stop offset="1" stop-color="#020303"/>
+    </linearGradient>
+<linearGradient id="02-paper-support-tw-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080f14"/>
+      <stop offset=".08" stop-color="#728080"/>
+      <stop offset=".18" stop-color="#f7f8f4"/>
+      <stop offset=".28" stop-color="#acafae"/>
+      <stop offset=".4" stop-color="#4e504f"/>
+      <stop offset=".52" stop-color="#111a1c"/>
+      <stop offset=".65" stop-color="#7d8888"/>
+      <stop offset=".72" stop-color="#ecedec"/>
+      <stop offset=".83" stop-color="#606363"/>
+      <stop offset="1" stop-color="#101719"/>
+    </linearGradient>
+<linearGradient id="02-paper-support-tw-iron" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#727574"/><stop offset=".12" stop-color="#2f3434"/><stop offset=".5" stop-color="#111819"/><stop offset=".88" stop-color="#080d0d"/><stop offset="1" stop-color="#515654"/></linearGradient></defs>
+<g id="paper-support"><g id="carriage-rear">
+      <path d="M 328 633 Q 329 599 357 595 L 1242 595 Q 1272 599 1272 632 L 1301 709 L 302 709 Z" fill="url(#02-paper-support-tw-front)" stroke="#141614" stroke-width="2"/>
+      <path d="M 360 602 L 1241 602" fill="none" stroke="#7e807b" stroke-width="2" opacity=".6"/>
+      <rect x="285" y="676" width="1030" height="23" rx="8" fill="url(#02-paper-support-tw-chrome)" stroke="#161817" stroke-width="2"/>
+    </g><path d="M402 650V490q0-18 18-18h760q18 0 18 18v160" fill="url(#02-paper-support-tw-iron)" stroke="#555b56" stroke-width="2"/><path d="M419 481h759" stroke="#a0a294" opacity=".4"/></g>
+</svg>

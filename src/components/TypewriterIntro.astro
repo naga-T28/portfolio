@@ -1,51 +1,68 @@
 ---
-import typewriterSvg from '../assets/typewriter.svg?raw';
+import logo from '../assets/logo-naga-t.png';
 import { typewriterConfig } from '../config/typewriter.js';
-import { parseBlocks } from '../scripts/motion.js';
-
-const escapeXml = (value: string) => value.replace(/[&<>"']/g, (char) => ({
-  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;',
-}[char]!));
-
-// The typed sheet, as real document structure for assistive technology and search engines.
-const blocks = parseBlocks(typewriterConfig.body).filter(block => block.type !== 'blank');
-
-const art = typewriterSvg
-  .replace(/<\?xml[^>]*\?>\s*/, '')
-  .replace('<!--WELCOME_CONTENT-->', `<text id="welcome-print" x="800" y="245" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="38" fill="#302f2a" letter-spacing="0.25">${escapeXml(typewriterConfig.welcome)}</text>`);
+import { buildScript, linkSegments, parseBlocks, sceneGeometry } from '../scripts/motion.js';
+const parts = import.meta.glob('../assets/typewriter/*.svg', { query: '?raw', import: 'default', eager: true });
+const art = (name: string) => parts[`../assets/typewriter/${name}.svg`] as string;
+// Both letters are in the HTML: Japanese is shown without JavaScript, the controller swaps languages.
+const letters = [
+  { lang: 'ja', copy: typewriterConfig, label: '紙に印字する文章の全文' },
+  { lang: 'en', copy: typewriterConfig.en, label: 'Full text of the typed letter' },
+].map(letter => ({ ...letter, blocks: parseBlocks(letter.copy.body).filter(block => block.type !== 'blank') }));
+const initial = buildScript(typewriterConfig, sceneGeometry({ width: 1440, svgWidth: 1200 }));
+const external = (href: string) => /^https?:\/\//i.test(href) ? { target: '_blank', rel: 'noopener' } : {};
+const rear = ['11-shadows', '01-body-frame', '02-paper-support', '03-feed-roller', '04-roller-knobs'];
+const front = ['12-foreground-mask', '13-paper-front-frame', '07-typebar-mechanism', '14-ribbon-spools', '06-carriage-rail', '05-print-head', '08-keyboard-bed', '10-front-decoration', '09-keycaps'];
 ---
-
 <section class="typewriter-story" data-typewriter-story data-settings={JSON.stringify(typewriterConfig)} aria-label="タイプライターのイントロダクション">
   <div class="typewriter-stage" data-typewriter-stage>
     <header class="masthead">
-      <a class="wordmark" href={import.meta.env.BASE_URL} aria-label="naga-t.jp の先頭へ">NAGA-T<span class="wordmark__dot">.</span></a>
-      <button class="rewind" type="button" data-rewind aria-label="紙を最初の位置に戻す" disabled>
-        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
-          <path d="M4 7h8a5 5 0 0 1 0 10H9M4 7l4-4M4 7l4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span>はじめに戻る</span>
-      </button>
+      <a class="wordmark" href={import.meta.env.BASE_URL} aria-label="naga-t.jp の先頭へ" data-i18n-label="home"><img class="wordmark__logo" src={logo.src} width={logo.width} height={logo.height} alt="NAGA-T.JP" /></a>
+      <div class="story-actions">
+        <button class="auto-scroll" type="button" data-auto-scroll aria-pressed="false" hidden>
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path class="auto-scroll__play" d="M6 4.5v11l9-5.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" /><path class="auto-scroll__pause" d="M7 5v10M13 5v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+          <span class="action-label" data-i18n="auto">自動</span>
+        </button>
+        <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false" hidden>
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M3 8h3l4-3.5v11L6 12H3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" /><path class="sound-toggle__waves" d="M13 7.5a3.5 3.5 0 0 1 0 5M15.2 5.5a6.5 6.5 0 0 1 0 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" /><path class="sound-toggle__mute" d="m13 8 4 4m0-4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" /></svg>
+          <span class="action-label"><span data-i18n="sound">音</span> <span data-sound-state>OFF</span></span>
+        </button>
+        <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="true" hidden>
+          <span data-i18n="effects">演出</span> <span data-motion-state>ON</span>
+        </button>
+        <button class="lang-toggle" type="button" data-lang-toggle lang="en" aria-label="Switch to English" hidden>EN</button>
+      </div>
     </header>
-
-    <h1 class="visually-hidden" lang="en">{typewriterConfig.welcome}</h1>
-    <div class="visually-hidden">
-      {blocks.map(block =>
-        block.type === 'rule' ? <hr /> :
-        block.type === 'heading' ? (block.level === 1 ? <h2>{block.text}</h2> : <h3>{block.text}</h3>) :
-        <p>{block.text}</p>
-      )}
+    <div class="scroll-hint" data-scroll-hint aria-hidden="true">
+      <span data-i18n="hint">スクロールしてタイプ</span>
+      <svg viewBox="0 0 20 24" width="26" height="32" fill="none"><path class="scroll-hint__chevron" d="m4 6 6 6 6-6" /><path class="scroll-hint__chevron" d="m4 13 6 6 6-6" /></svg>
     </div>
     <div class="typewriter-machine" data-typewriter-machine aria-hidden="true">
-      <Fragment set:html={art} />
-    </div>
-
-    <div class="scroll-cue" data-scroll-cue aria-hidden="true">
-      <span class="scroll-cue__stroke"></span>
-      <span>スクロールしてタイプする</span>
+      <div class="machine-coordinate-space" data-machine-space>
+        {rear.map(name => <Fragment set:html={art(name)} />)}
+        <div class="paper-window">
+          <div class="paper-feed" data-paper-feed style={`top:${initial.paperTop}px;height:${initial.paperBottom - initial.paperTop}px`}>
+            <div class="paper-welcome" data-paper-welcome style={`top:${initial.titleY - initial.paperTop - 40}px`}>{typewriterConfig.welcome}</div>
+            <div class="paper-print" data-paper-print></div>
+          </div>
+        </div>
+        {front.map(name => <Fragment set:html={art(name)} />)}
+      </div>
     </div>
   </div>
+  {letters.map(({ lang, copy, label, blocks }) => (
+    <article class="letter-transcript" data-letter-transcript={lang} lang={lang} tabindex="-1" aria-label={label} hidden={lang !== 'ja'}>
+      <h1 lang="en">{copy.welcome}</h1>
+      {blocks.map(block => {
+        if (block.type === 'rule') return <hr />;
+        const inline = linkSegments(block).map(({ text, href }) => href ? <a href={href} {...external(href)}>{text}</a> : text);
+        if (block.type === 'linkrow') return <p class="link-row"><strong>{block.label}</strong> <span>{inline}</span></p>;
+        const Tag = block.type === 'paragraph' ? 'p' : block.level === 1 ? 'h2' : 'h3';
+        return <Tag>{inline}</Tag>;
+      })}
+    </article>
+  ))}
 </section>
-
 <script>
   import { mountTypewriters } from '../scripts/typewriter.js';
   mountTypewriters();

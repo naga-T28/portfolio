@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="05-print-head">
+<title>左右に動く印字ヘッド・基準点は文字セル中央</title>
+<defs><linearGradient id="05-print-head-tw-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080f14"/>
+      <stop offset=".08" stop-color="#728080"/>
+      <stop offset=".18" stop-color="#f7f8f4"/>
+      <stop offset=".28" stop-color="#acafae"/>
+      <stop offset=".4" stop-color="#4e504f"/>
+      <stop offset=".52" stop-color="#111a1c"/>
+      <stop offset=".65" stop-color="#7d8888"/>
+      <stop offset=".72" stop-color="#ecedec"/>
+      <stop offset=".83" stop-color="#606363"/>
+      <stop offset="1" stop-color="#101719"/>
+    </linearGradient>
+<linearGradient id="05-print-head-tw-brass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#514329"/><stop offset=".16" stop-color="#c9b47e"/><stop offset=".29" stop-color="#eee2b9"/><stop offset=".46" stop-color="#8b7444"/><stop offset=".7" stop-color="#3b3020"/><stop offset=".9" stop-color="#ae965c"/><stop offset="1" stop-color="#55452a"/></linearGradient></defs>
+<g id="print-head" data-motion="translateX" data-print-baseline="686" transform="translate(476 0)"><path d="M-42 748-31 706h13v10h-7l-6 26h62l-6-26h-7v-10h13l11 42Z" fill="url(#05-print-head-tw-chrome)" stroke="#323a34" stroke-width="2"/><path d="M-21 731v-44h8v41h26v-41h8v44Z" fill="url(#05-print-head-tw-brass)" stroke="#615438"/><path d="M-12 700v-15m24 15v-15" stroke="#d1c8a9" stroke-width="2"/><path d="m-5 701 5-8 5 8" fill="#a0844a"/><g transform="translate(-32 746)"><circle r="6" fill="url(#05-print-head-tw-brass)" stroke="#24251d"/><path d="M-3.5 2 3.5-2" stroke="#24251d" stroke-width="1.4"/></g><g transform="translate(32 746)"><circle r="6" fill="url(#05-print-head-tw-brass)" stroke="#24251d"/><path d="M-3.5 2 3.5-2" stroke="#24251d" stroke-width="1.4"/></g></g>
+</svg>

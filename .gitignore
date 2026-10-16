@@ -1,0 +1,5 @@
+node_modules/
+.astro/
+release/
+*.zip
+.DS_Store

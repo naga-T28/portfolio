@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="12-foreground-mask">
+<title>紙の出口の前景遮蔽と紙上の接触影</title>
+<defs><linearGradient id="12-foreground-mask-tw-contact-shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#161910" stop-opacity="0"/><stop offset=".7" stop-color="#161910" stop-opacity=".08"/><stop offset="1" stop-color="#161910" stop-opacity=".46"/></linearGradient>
+<linearGradient id="12-foreground-mask-tw-iron" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#727574"/><stop offset=".12" stop-color="#2f3434"/><stop offset=".5" stop-color="#111819"/><stop offset=".88" stop-color="#080d0d"/><stop offset="1" stop-color="#515654"/></linearGradient></defs>
+<g id="foreground-mask"><path d="M402 661H1198V706H402Z" fill="url(#12-foreground-mask-tw-contact-shade)"/><path d="M354 706H1246l4 23H350Z" fill="url(#12-foreground-mask-tw-iron)" stroke="#161b18"/><path d="M358 707H1242" stroke="#a8aba0" stroke-width="1.8"/></g>
+</svg>

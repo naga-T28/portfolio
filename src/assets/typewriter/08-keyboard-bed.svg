@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="08-keyboard-bed">
+<title>キーボード台と連結軸</title>
+<defs><linearGradient id="08-keyboard-bed-tw-rod" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#191b1b"/>
+      <stop offset=".18" stop-color="#5f6261"/>
+      <stop offset=".38" stop-color="#eeefed"/>
+      <stop offset=".55" stop-color="#9ea2a0"/>
+      <stop offset=".7" stop-color="#3f4241"/>
+      <stop offset="1" stop-color="#0f1110"/>
+    </linearGradient></defs>
+<g id="keyboard-bed"><g id="keyboard-linkage">
+    <path d="M 427 1015 L 429 977 Q 432 973 436 977 L 437 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 432 1011 L 593.9 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 431 1011 L 592.9 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="433" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 494 1015 L 496 977 Q 499 973 503 977 L 504 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 499 1011 L 631.4 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 498 1011 L 630.4 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="500" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 561 1015 L 563 977 Q 566 973 570 977 L 571 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 566 1011 L 669.0 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 565 1011 L 668.0 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="567" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 628 1015 L 630 977 Q 633 973 637 977 L 638 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 633 1011 L 706.5 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 632 1011 L 705.5 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="634" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 695 1015 L 697 977 Q 700 973 704 977 L 705 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 700 1011 L 744.0 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 699 1011 L 743.0 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="701" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 762 1015 L 764 977 Q 767 973 771 977 L 772 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 767 1011 L 781.5 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 766 1011 L 780.5 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="768" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 829 1015 L 831 977 Q 834 973 838 977 L 839 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 834 1011 L 819.0 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 833 1011 L 818.0 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="835" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 896 1015 L 898 977 Q 901 973 905 977 L 906 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 901 1011 L 856.6 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 900 1011 L 855.6 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="902" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 963 1015 L 965 977 Q 968 973 972 977 L 973 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 968 1011 L 894.1 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 967 1011 L 893.1 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="969" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 1030 1015 L 1032 977 Q 1035 973 1039 977 L 1040 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1035 1011 L 931.6 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1034 1011 L 930.6 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1036" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 1097 1015 L 1099 977 Q 1102 973 1106 977 L 1107 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1102 1011 L 969.1 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1101 1011 L 968.1 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1103" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 1164 1015 L 1166 977 Q 1169 973 1173 977 L 1174 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1169 1011 L 1006.6 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1168 1011 L 1005.6 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1170" cy="1004" rx="29" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 481 1073 L 483 1035 Q 486 1031 490 1035 L 491 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 486 1069 L 624.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 485 1069 L 623.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="487" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 551 1073 L 553 1035 Q 556 1031 560 1035 L 561 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 556 1069 L 663.4 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 555 1069 L 662.4 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="557" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 621 1073 L 623 1035 Q 626 1031 630 1035 L 631 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 626 1069 L 702.6 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 625 1069 L 701.6 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="627" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 691 1073 L 693 1035 Q 696 1031 700 1035 L 701 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 696 1069 L 741.8 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 695 1069 L 740.8 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="697" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 761 1073 L 763 1035 Q 766 1031 770 1035 L 771 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 766 1069 L 781.0 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 765 1069 L 780.0 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="767" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 831 1073 L 833 1035 Q 836 1031 840 1035 L 841 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 836 1069 L 820.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 835 1069 L 819.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="837" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 901 1073 L 903 1035 Q 906 1031 910 1035 L 911 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 906 1069 L 859.4 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 905 1069 L 858.4 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="907" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 971 1073 L 973 1035 Q 976 1031 980 1035 L 981 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 976 1069 L 898.6 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 975 1069 L 897.6 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="977" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 1041 1073 L 1043 1035 Q 1046 1031 1050 1035 L 1051 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1046 1069 L 937.8 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1045 1069 L 936.8 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1047" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 1111 1073 L 1113 1035 Q 1116 1031 1120 1035 L 1121 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1116 1069 L 977.0 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1115 1069 L 976.0 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1117" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 506 1131 L 508 1093 Q 511 1089 515 1093 L 516 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 511 1127 L 638.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 510 1127 L 637.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="512" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 579 1131 L 581 1093 Q 584 1089 588 1093 L 589 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 584 1127 L 679.0 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 583 1127 L 678.0 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="585" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 652 1131 L 654 1093 Q 657 1089 661 1093 L 662 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 657 1127 L 719.9 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 656 1127 L 718.9 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="658" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 725 1131 L 727 1093 Q 730 1089 734 1093 L 735 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 730 1127 L 760.8 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 729 1127 L 759.8 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="731" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 798 1131 L 800 1093 Q 803 1089 807 1093 L 808 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 803 1127 L 801.7 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 802 1127 L 800.7 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="804" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 871 1131 L 873 1093 Q 876 1089 880 1093 L 881 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 876 1127 L 842.6 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 875 1127 L 841.6 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="877" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 944 1131 L 946 1093 Q 949 1089 953 1093 L 954 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 949 1127 L 883.4 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 948 1127 L 882.4 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="950" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 1017 1131 L 1019 1093 Q 1022 1089 1026 1093 L 1027 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1022 1127 L 924.3 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1021 1127 L 923.3 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1023" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 1090 1131 L 1092 1093 Q 1095 1089 1099 1093 L 1100 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1095 1127 L 965.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1094 1127 L 964.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1096" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 535 1189 L 537 1151 Q 540 1147 544 1151 L 545 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 540 1185 L 654.4 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 539 1185 L 653.4 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="541" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 611 1189 L 613 1151 Q 616 1147 620 1151 L 621 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 616 1185 L 697.0 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 615 1185 L 696.0 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="617" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 687 1189 L 689 1151 Q 692 1147 696 1151 L 697 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 692 1185 L 739.5 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 691 1185 L 738.5 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="693" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 763 1189 L 765 1151 Q 768 1147 772 1151 L 773 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 768 1185 L 782.1 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 767 1185 L 781.1 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="769" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 839 1189 L 841 1151 Q 844 1147 848 1151 L 849 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 844 1185 L 824.6 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 843 1185 L 823.6 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="845" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 915 1189 L 917 1151 Q 920 1147 924 1151 L 925 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 920 1185 L 867.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 919 1185 L 866.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="921" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 991 1189 L 993 1151 Q 996 1147 1000 1151 L 1001 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 996 1185 L 909.8 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 995 1185 L 908.8 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="997" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 1067 1189 L 1069 1151 Q 1072 1147 1076 1151 L 1077 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1072 1185 L 952.3 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1071 1185 L 951.3 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1073" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 1143 1189 L 1145 1151 Q 1148 1147 1152 1151 L 1153 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1148 1185 L 994.9 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1147 1185 L 993.9 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1149" cy="1178" rx="34" ry="14.625" fill="#020302" opacity=".8"/>
+    <path d="M 1163 1131 L 1165 1093 Q 1168 1089 1172 1093 L 1173 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1168 1127 L 1006.1 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1167 1127 L 1005.1 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1169" cy="1120" rx="32.5" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 1181 1073 L 1183 1035 Q 1186 1031 1190 1035 L 1191 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1186 1069 L 1016.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1185 1069 L 1015.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1187" cy="1062" rx="31" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 344 1015 L 346 977 Q 349 973 353 977 L 354 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 349 1011 L 547.4 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 348 1011 L 546.4 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="350" cy="1004" rx="37" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 1240 1015 L 1242 977 Q 1245 973 1249 977 L 1250 1015 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1245 1011 L 1049.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1244 1011 L 1048.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1246" cy="1004" rx="37" ry="12.025" fill="#020302" opacity=".8"/>
+    <path d="M 399 1073 L 401 1035 Q 404 1031 408 1035 L 409 1073 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 404 1069 L 578.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 403 1069 L 577.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="405" cy="1062" rx="36" ry="13.0" fill="#020302" opacity=".8"/>
+    <path d="M 419 1131 L 421 1093 Q 424 1089 428 1093 L 429 1131 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 424 1127 L 589.4 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 423 1127 L 588.4 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="425" cy="1120" rx="38" ry="13.975" fill="#020302" opacity=".8"/>
+    <path d="M 400 1189 L 402 1151 Q 405 1147 409 1151 L 410 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 405 1185 L 578.8 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 404 1185 L 577.8 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="406" cy="1178" rx="55" ry="15.275" fill="#020302" opacity=".8"/>
+    <path d="M 1256 1189 L 1258 1151 Q 1261 1147 1265 1151 L 1266 1189 Z" fill="url(#08-keyboard-bed-tw-rod)" stroke="#0b0d0a" stroke-width=".8"/>
+    <path d="M 1261 1185 L 1058.2 911" fill="none" stroke="#0f110e" stroke-width="5" opacity=".7"/>
+    <path d="M 1260 1185 L 1057.2 911" fill="none" stroke="#8c9088" stroke-width="1" opacity=".18"/>
+    <ellipse cx="1262" cy="1178" rx="55" ry="15.275" fill="#020302" opacity=".8"/>
+  </g></g>
+</svg>

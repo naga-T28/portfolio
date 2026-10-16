@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="11-shadows">
+<title>背景透過の接地影</title>
+<defs><radialGradient id="11-shadows-tw-ground">
+      <stop offset="0" stop-color="#0b0e0d" stop-opacity="0.36"/>
+      <stop offset=".52" stop-color="#0c0e0d" stop-opacity="0.19"/>
+      <stop offset="1" stop-color="#0b0e0d" stop-opacity="0"/>
+    </radialGradient>
+<radialGradient id="11-shadows-tw-soft-shadow-fill"><stop offset="0" stop-color="#101210" stop-opacity=".23"/><stop offset=".55" stop-color="#101210" stop-opacity=".2"/><stop offset="1" stop-color="#101210" stop-opacity="0"/></radialGradient></defs>
+<g id="ground-shadow" data-optional="true">
+    <ellipse cx="800" cy="1283" rx="596" ry="57" fill="url(#11-shadows-tw-ground)"/>
+    <ellipse cx="800" cy="1270" rx="485" ry="54" fill="url(#11-shadows-tw-soft-shadow-fill)"/>
+  </g>
+</svg>

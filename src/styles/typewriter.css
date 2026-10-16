@@ -1,0 +1,147 @@
+/* Hallmark · component: typewriter section · genre: editorial · theme: existing white / ink / brass
+ * Shared 1600 × 1400 coordinate system. Paper lives in HTML, in between vector layers.
+ * Pre-emit critique: P4 H4 E4 S5 R5 V4. */
+:root {
+  --scene-background: #fafaf7;
+  --ink: #30372f;
+  --muted: #62695e;
+  --metal-accent: #8a7448;
+  --focus: #53634b;
+  --rule: #d9dcd1;
+  --paper: #f8f4e8;
+  --paper-edge: #d9d3c1;
+  --paper-highlight: #fffdf5;
+  --paper-shade: #c6bea14d;
+  --paper-grain: #857a5320;
+  --paper-shadow: #25302016;
+  --print-ink: #2e322b;
+  /* Links are struck through the red half of a two-colour ribbon. */
+  --link-ink: #9a3324;
+  --selection: #d4ddc9;
+  --font-ui: Arial, "Helvetica Neue", "Noto Sans JP", sans-serif;
+  --font-typewriter: "Courier New", Courier, "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", monospace;
+  font-family: var(--font-ui);
+}
+html, body { overflow-x: clip; }
+body, main { min-width: 0; }
+button:focus-visible, a:focus-visible { outline-color: var(--focus); }
+::selection { background: var(--selection); }
+button, .wordmark { white-space: nowrap; }
+h1, h2, h3 { font-style: normal; overflow-wrap: anywhere; min-width: 0; }
+.typewriter-stage { height: auto; min-height: 0; overflow: clip; }
+.machine-viewport-probe { position: absolute; top: 0; height: 100vh; height: 100lvh; visibility: hidden; pointer-events: none; }
+/* Sticky, not a JS pin: the browser keeps the stage fixed and `dvh` follows iOS toolbars as they collapse,
+   so no gap opens under the machine. The spacer after the stage (sized in typewriter.js) is the scroll distance. */
+.typewriter-story[data-motion="animated"] .typewriter-stage { position: sticky; top: 0; height: 100vh; height: 100dvh; min-height: 280px; }
+.masthead { position: relative; inset: auto; margin: 0; padding: 28px clamp(20px, 4vw, 64px); z-index: 5; background: linear-gradient(to bottom, var(--scene-background) 55%, transparent); }
+.typewriter-story[data-motion="animated"] .masthead { position: absolute; inset: 0 0 auto; }
+.wordmark { display: block; line-height: 0; }
+.wordmark__logo { display: block; width: auto; height: 30px; }
+.story-actions { display: flex; align-items: center; gap: 26px; }
+.sound-toggle, .auto-scroll { display: inline-flex; align-items: center; gap: 7px; }
+.auto-scroll[aria-pressed="true"] { color: var(--ink); }
+.auto-scroll[aria-pressed="true"] .auto-scroll__play, .auto-scroll[aria-pressed="false"] .auto-scroll__pause { display: none; }
+.sound-toggle[aria-pressed="true"], .motion-toggle[aria-pressed="true"] { color: var(--ink); }
+.sound-toggle[aria-pressed="true"] .sound-toggle__mute, .sound-toggle[aria-pressed="false"] .sound-toggle__waves { display: none; }
+.motion-toggle, .sound-toggle, .auto-scroll, .lang-toggle { min-height: 44px; padding: 10px 0; border: 0; border-bottom: 1px solid var(--rule); background: transparent; color: var(--muted); font: 11px var(--font-ui); letter-spacing: .06em; cursor: pointer; transition: color .15s; }
+.motion-toggle:hover, .sound-toggle:hover, .auto-scroll:hover, .lang-toggle:hover { color: var(--ink); }
+.motion-toggle:active, .sound-toggle:active, .auto-scroll:active, .lang-toggle:active { transform: translateY(1px); }
+[hidden] { display: none !important; }
+/* Shown only before the first stroke; it fades as soon as the feed starts. */
+.scroll-hint {
+  position: absolute; left: 50%; top: var(--paper-top, 60%); z-index: 3;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  transform: translate(-50%, calc(-100% - 18px));
+  color: var(--ink); font: 17px var(--font-ui); letter-spacing: .14em; white-space: nowrap;
+  pointer-events: none; transition: opacity .35s, transform .35s;
+  animation: scroll-hint-in .6s .4s backwards;
+}
+.scroll-hint svg { overflow: visible; width: 26px; height: 32px; }
+.scroll-hint__chevron { stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; animation: scroll-hint-bob 1.6s ease-in-out infinite; }
+.scroll-hint__chevron + .scroll-hint__chevron { animation-delay: .15s; opacity: .55; }
+.typewriter-story[data-feed-started="true"] .scroll-hint { opacity: 0; transform: translate(-50%, calc(-100% - 30px)); }
+.typewriter-story:not([data-motion="animated"]) .scroll-hint { display: none; }
+@keyframes scroll-hint-bob { 0%, 100% { transform: translateY(-3px); opacity: .35; } 50% { transform: translateY(4px); opacity: 1; } }
+@keyframes scroll-hint-in { from { opacity: 0; } }
+@media (max-width: 599px) { .scroll-hint { font-size: 15px; } }
+.typewriter-machine {
+  /* Pulled back so the whole machine rests on the bottom edge and the paper has the room above it. */
+  --machine-width: min(1250px, 120vw, 118svh);
+  width: var(--machine-width);
+  aspect-ratio: 1600 / 1400;
+  left: 50%;
+  bottom: calc(var(--machine-width) * -95 / 1600);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+/* The scene is authored in 1600 × 1400 units. `zoom` (not a scale transform) lays it out and rasterises it
+   at its on-screen size, so GPU layers stay screen-sized instead of 1600 px wide × device pixel ratio. */
+.machine-coordinate-space { position: absolute; width: 1600px; height: 1400px; zoom: var(--machine-scale, .75); }
+.machine-coordinate-space > svg { position: absolute; inset: 0; width: 1600px; height: 1400px; overflow: visible; }
+.machine-coordinate-space { --paper-reach: 6000px; }
+/* The sheet may rise to the top of the screen and no further: a taller window only inflates the GPU layer.
+   typewriter.js sets --paper-reach to the distance from the scene's top edge to the screen's, in scene units. */
+/* The window, not the long sheet, is the GPU layer: its size stays fixed however long the letter is.
+   It spans the sheet (410–1190) plus room for its shadow. */
+.paper-window { position: absolute; left: 380px; top: calc(-1 * var(--paper-reach)); width: 840px; height: calc(var(--paper-reach) + 706px); overflow: clip; will-change: transform; }
+.paper-feed {
+  position: absolute;
+  left: 30px;
+  width: 780px;
+  margin-top: var(--paper-reach);
+  border: 0;
+  outline: 1px solid var(--paper-edge);
+  border-radius: 2px 3px 0 0;
+  background: linear-gradient(90deg, var(--paper-shade), transparent 3%, transparent 96%, var(--paper-shade)), var(--paper);
+  box-shadow: 8px 0 24px var(--paper-shadow), inset 0 3px 0 var(--paper-highlight);
+}
+.paper-feed::before {
+  content: ""; position: absolute; inset: 0; opacity: .3; pointer-events: none;
+  background-image: repeating-linear-gradient(7deg, transparent 0 3px, var(--paper-grain) 3px 3.5px, transparent 3.5px 7px);
+}
+.paper-welcome { position: absolute; left: 0; right: 0; text-align: center; font-family: var(--font-typewriter); font-size: 40px; line-height: 52px; color: var(--print-ink); font-kerning: none; letter-spacing: -.5px; }
+.paper-welcome span { display: block; }
+.paper-print { position: absolute; inset: 0; color: var(--print-ink); font-family: var(--font-typewriter); font-kerning: none; font-variant-ligatures: none; }
+.printed-glyph { position: absolute; display: flex; align-items: baseline; justify-content: center; line-height: 1; white-space: pre; }
+.printed-glyph.is-bold { font-weight: 700; }
+.printed-glyph.is-table-rule { color: var(--muted); font-weight: 300; }
+.printed-glyph.is-link { color: var(--link-ink); text-decoration: none; pointer-events: auto; cursor: pointer; }
+.printed-glyph.is-link::after { content: ""; position: absolute; left: 6%; right: 6%; bottom: -.12em; border-bottom: 2px dotted currentColor; opacity: .6; }
+.printed-glyph.is-link:hover::after { border-bottom-style: solid; opacity: 1; }
+.letter-transcript a { color: var(--link-ink); text-underline-offset: .2em; }
+.letter-transcript .link-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 1em; margin: 0; }
+.letter-transcript .link-row + hr, .letter-transcript hr:has(+ .link-row) { margin: .4em 0; border-top: 1px dashed var(--paper-edge); opacity: 1; }
+.letter-transcript { max-width: 720px; margin: 24px auto 80px; padding: clamp(24px, 5vw, 64px); color: var(--print-ink); background: var(--paper); border: 1px solid var(--paper-edge); font-family: var(--font-typewriter); font-size: 14px; line-height: 2; scroll-margin-top: 24px; }
+.letter-transcript h1 { font-size: clamp(20px, 5vw, 30px); margin: 0 0 2.5em; font-weight: 400; line-height: 1.5; }
+.letter-transcript h2, .letter-transcript h3 { font-size: 1.05em; margin: 2em 0 1em; }
+.letter-transcript hr { border: 0; border-top: 1px solid var(--print-ink); opacity: .55; margin: 2em 0; }
+.typewriter-story[data-motion="animated"] .letter-transcript { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.typewriter-story:not([data-motion="animated"]) :is(.typewriter-machine, .sound-toggle, .auto-scroll) { display: none; }
+@media (max-width: 599px) {
+  .masthead { padding: 16px 20px; }
+  .story-actions { gap: 12px; }
+  .motion-toggle, .lang-toggle { font-size: 10px; }
+  .wordmark__logo { height: 22px; }
+  /* Icon-only toggles on phones; the label stays for assistive tech. */
+  .sound-toggle, .auto-scroll { min-width: 32px; justify-content: center; }
+  .action-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  /* Closer in: the sheet (780 of 1600 SVG units) spans about 85% of the screen. */
+  .typewriter-machine { --machine-width: calc(85vw * 1600 / 780); }
+  .letter-transcript { margin: 20px 16px 48px; }
+}
+/* Four header controls next to the logo on the narrowest phones. */
+@media (max-width: 359px) {
+  .masthead { padding-inline: 14px; }
+  .story-actions { gap: 8px; }
+  .wordmark__logo { height: 19px; }
+  .sound-toggle, .auto-scroll { min-width: 26px; }
+}
+@media (max-height: 500px) {
+  .masthead { padding: 8px 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-story[data-motion="animated"] .typewriter-stage { height: auto; }
+  .typewriter-machine { display: none; }
+  .typewriter-story .masthead { position: relative; }
+  .paper-window { will-change: auto; }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="13-paper-front-frame">
+<title>紙より手前の押さえフレーム</title>
+<defs><linearGradient id="13-paper-front-frame-tw-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080f14"/>
+      <stop offset=".08" stop-color="#728080"/>
+      <stop offset=".18" stop-color="#f7f8f4"/>
+      <stop offset=".28" stop-color="#acafae"/>
+      <stop offset=".4" stop-color="#4e504f"/>
+      <stop offset=".52" stop-color="#111a1c"/>
+      <stop offset=".65" stop-color="#7d8888"/>
+      <stop offset=".72" stop-color="#ecedec"/>
+      <stop offset=".83" stop-color="#606363"/>
+      <stop offset="1" stop-color="#101719"/>
+    </linearGradient>
+<linearGradient id="13-paper-front-frame-tw-brass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#514329"/><stop offset=".16" stop-color="#c9b47e"/><stop offset=".29" stop-color="#eee2b9"/><stop offset=".46" stop-color="#8b7444"/><stop offset=".7" stop-color="#3b3020"/><stop offset=".9" stop-color="#ae965c"/><stop offset="1" stop-color="#55452a"/></linearGradient>
+<linearGradient id="13-paper-front-frame-tw-rubber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070707"/>
+      <stop offset=".18" stop-color="#252725"/>
+      <stop offset=".32" stop-color="#3a3c3a"/>
+      <stop offset=".38" stop-color="#292b29"/>
+      <stop offset=".64" stop-color="#0b0c0b"/>
+      <stop offset="1" stop-color="#040504"/>
+    </linearGradient></defs>
+<g id="paper-front-frame"><path d="M367 712V659q0-13 14-13h26m786 0h26q14 0 14 13v53" fill="none" stroke="url(#13-paper-front-frame-tw-chrome)" stroke-width="9"/><path d="M384 711H1216" stroke="url(#13-paper-front-frame-tw-chrome)" stroke-width="7"/><g><path d="M423 623v86h14v-86Z" fill="url(#13-paper-front-frame-tw-brass)" stroke="#463f2c"/><rect x="418" y="646" width="24" height="29" rx="9" fill="url(#13-paper-front-frame-tw-rubber)"/><path d="M422 651h16" stroke="#b4b9aa" opacity=".3"/><g transform="translate(430 694)"><circle r="6" fill="url(#13-paper-front-frame-tw-brass)" stroke="#24251d"/><path d="M-3.5 2 3.5-2" stroke="#24251d" stroke-width="1.4"/></g></g><g><path d="M1163 623v86h14v-86Z" fill="url(#13-paper-front-frame-tw-brass)" stroke="#463f2c"/><rect x="1158" y="646" width="24" height="29" rx="9" fill="url(#13-paper-front-frame-tw-rubber)"/><path d="M1162 651h16" stroke="#b4b9aa" opacity=".3"/><g transform="translate(1170 694)"><circle r="6" fill="url(#13-paper-front-frame-tw-brass)" stroke="#24251d"/><path d="M-3.5 2 3.5-2" stroke="#24251d" stroke-width="1.4"/></g></g></g>
+</svg>

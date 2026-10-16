@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="01-body-frame">
+<title>固定本体・黒い鋳鉄フレーム</title>
+<defs><linearGradient id="01-body-frame-tw-enamel" x1=".1" y1="0" x2=".82" y2="1">
+      <stop offset="0" stop-color="#596063"/>
+      <stop offset=".055" stop-color="#292e2e"/>
+      <stop offset=".23" stop-color="#101515"/>
+      <stop offset=".51" stop-color="#070a0b"/>
+      <stop offset=".78" stop-color="#171c1c"/>
+      <stop offset="1" stop-color="#030505"/>
+    </linearGradient>
+<linearGradient id="01-body-frame-tw-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080f14"/>
+      <stop offset=".08" stop-color="#728080"/>
+      <stop offset=".18" stop-color="#f7f8f4"/>
+      <stop offset=".28" stop-color="#acafae"/>
+      <stop offset=".4" stop-color="#4e504f"/>
+      <stop offset=".52" stop-color="#111a1c"/>
+      <stop offset=".65" stop-color="#7d8888"/>
+      <stop offset=".72" stop-color="#ecedec"/>
+      <stop offset=".83" stop-color="#606363"/>
+      <stop offset="1" stop-color="#101719"/>
+    </linearGradient>
+<linearGradient id="01-body-frame-tw-chrome-soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c5c7c5"/>
+      <stop offset=".12" stop-color="#e4e6e2"/>
+      <stop offset=".36" stop-color="#7d817f"/>
+      <stop offset=".67" stop-color="#404442"/>
+      <stop offset="1" stop-color="#161917"/>
+    </linearGradient>
+<linearGradient id="01-body-frame-tw-rubber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070707"/>
+      <stop offset=".18" stop-color="#252725"/>
+      <stop offset=".32" stop-color="#3a3c3a"/>
+      <stop offset=".38" stop-color="#292b29"/>
+      <stop offset=".64" stop-color="#0b0c0b"/>
+      <stop offset="1" stop-color="#040504"/>
+    </linearGradient>
+<linearGradient id="01-body-frame-tw-side-left" x1="0" y1="0" x2="1" y2=".5">
+      <stop offset="0" stop-color="#505959"/>
+      <stop offset=".13" stop-color="#202727"/>
+      <stop offset=".45" stop-color="#0b1010"/>
+      <stop offset="1" stop-color="#030505"/>
+    </linearGradient>
+<linearGradient id="01-body-frame-tw-side-right" x1="0" y1="0" x2="1" y2=".15">
+      <stop offset="0" stop-color="#0b0e0f"/>
+      <stop offset=".65" stop-color="#0c1112"/>
+      <stop offset=".92" stop-color="#242e2e"/>
+      <stop offset="1" stop-color="#030505"/>
+    </linearGradient>
+<linearGradient id="01-body-frame-tw-deck" x1=".25" y1="0" x2=".6" y2="1">
+      <stop offset="0" stop-color="#080b0b"/>
+      <stop offset=".23" stop-color="#171d1d"/>
+      <stop offset=".58" stop-color="#202121"/>
+      <stop offset="1" stop-color="#080b0b"/>
+    </linearGradient></defs>
+<g id="body-rear">
+    <path d="M 274 700 Q 260 666 308 650 L 1282 650 Q 1335 665 1324 717 L 1396 1155 Q 1402 1202 1340 1220 L 253 1220 Q 196 1202 207 1150 Z" fill="url(#01-body-frame-tw-enamel)" stroke="#151716" stroke-width="3"/>
+    <path d="M 307 659 L 1281 659 Q 1315 667 1315 688 L 285 688 Q 287 667 307 659 Z" fill="#4d4f4d" opacity=".8"/>
+    <path d="M 364 639 l 28 -3 12 124 -44 2 Z" fill="url(#01-body-frame-tw-chrome)" stroke="#161917" stroke-width="2"/>
+    <g transform="translate(377 721) rotate(-25)">
+      <ellipse cx="0" cy="1.5" rx="8" ry="4.8999999999999995" fill="#040404" opacity=".7"/>
+      <ellipse cx="0" cy="0" rx="7" ry="4.8999999999999995" fill="url(#01-body-frame-tw-chrome-soft)" stroke="#171a18" stroke-width=".8"/>
+      <path d="M -4.2,0 L 4.2,0" fill="none" stroke="#141614" stroke-width="1.35" stroke-linecap="round"/>
+      <path d="M -3.5,-.8 L 3.5,-.8" fill="none" stroke="#f5f4e0" stroke-width=".55" opacity=".6"/>
+    </g>
+    <path d="M 1195 639 l 28 -3 12 124 -44 2 Z" fill="url(#01-body-frame-tw-chrome)" stroke="#161917" stroke-width="2"/>
+    <g transform="translate(1208 721) rotate(-25)">
+      <ellipse cx="0" cy="1.5" rx="8" ry="4.8999999999999995" fill="#040404" opacity=".7"/>
+      <ellipse cx="0" cy="0" rx="7" ry="4.8999999999999995" fill="url(#01-body-frame-tw-chrome-soft)" stroke="#171a18" stroke-width=".8"/>
+      <path d="M -4.2,0 L 4.2,0" fill="none" stroke="#141614" stroke-width="1.35" stroke-linecap="round"/>
+      <path d="M -3.5,-.8 L 3.5,-.8" fill="none" stroke="#f5f4e0" stroke-width=".55" opacity=".6"/>
+    </g>
+  </g><g id="body-shell">
+    <path d="M 306 1203 q 40 -13 80 0 l -5 59 q -33 19 -70 0 Z" fill="url(#01-body-frame-tw-rubber)" stroke="#080908" stroke-width="3"/>
+    <path d="M 312 1251 q 30 9 62 0" fill="none" stroke="#525451" stroke-width="2" opacity=".7"/>
+    <path d="M 1187 1203 q 40 -13 80 0 l -5 59 q -33 19 -70 0 Z" fill="url(#01-body-frame-tw-rubber)" stroke="#080908" stroke-width="3"/>
+    <path d="M 1193 1251 q 30 9 62 0" fill="none" stroke="#525451" stroke-width="2" opacity=".7"/>
+    <path d="M 277 778 Q 289 751 324 751 L 1276 751 Q 1311 753 1322 783 L 1412 1152 Q 1429 1213 1370 1244 Q 800 1303 230 1244 Q 172 1215 189 1153 Z" fill="url(#01-body-frame-tw-enamel)" stroke="#050605" stroke-width="4"/>
+    <path d="M 278 787 Q 297 772 314 777 L 247 1141 Q 231 1182 255 1216 L 230 1243 Q 182 1226 189 1173 Z" fill="url(#01-body-frame-tw-side-left)"/>
+    <path d="M 1284 778 Q 1311 771 1321 789 L 1411 1154 Q 1426 1208 1370 1241 L 1346 1210 Q 1374 1194 1356 1144 Z" fill="url(#01-body-frame-tw-side-right)"/>
+    <path d="M 330 888 Q 800 842 1268 888 L 1351 1131 Q 1368 1169 1330 1182 Q 800 1227 270 1182 Q 232 1169 249 1131 Z" fill="url(#01-body-frame-tw-deck)" stroke="#060706" stroke-width="7"/>
+    <path d="M 332 895 Q 798 854 1264 895 L 1341 1129" fill="none" stroke="#6a6d69" stroke-width="1.7" opacity=".35"/>
+    <path d="M 323 909 L 258 1136 Q 250 1165 278 1170" fill="none" stroke="#a9aba8" stroke-width="1.7" opacity=".22"/>
+    <path d="M 338 954 Q 800 936 1263 954" fill="none" stroke="#040404" stroke-width="23" stroke-linecap="round" opacity=".86"/>
+    <path d="M 338 960 Q 800 942 1263 960" fill="none" stroke="#6b6e69" stroke-width="1.2" opacity=".38"/>
+    <path d="M 318 1019 Q 800 1001 1287 1019" fill="none" stroke="#040404" stroke-width="23" stroke-linecap="round" opacity=".86"/>
+    <path d="M 318 1025 Q 800 1007 1287 1025" fill="none" stroke="#6b6e69" stroke-width="1.2" opacity=".38"/>
+    <path d="M 294 1086 Q 800 1068 1308 1086" fill="none" stroke="#040404" stroke-width="23" stroke-linecap="round" opacity=".86"/>
+    <path d="M 294 1092 Q 800 1074 1308 1092" fill="none" stroke="#6b6e69" stroke-width="1.2" opacity=".38"/>
+    <path d="M 277 1150 Q 800 1132 1325 1150" fill="none" stroke="#040404" stroke-width="23" stroke-linecap="round" opacity=".86"/>
+    <path d="M 277 1156 Q 800 1138 1325 1156" fill="none" stroke="#6b6e69" stroke-width="1.2" opacity=".38"/>
+  </g>
+</svg>

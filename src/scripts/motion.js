@@ -1,39 +1,39 @@
-/** Pure geometry and choreography, in the original SVG's 1600 × 1400 coordinate system. */
-export const ART = Object.freeze({ width: 1600, height: 1400, platenY: 703 });
-/** Sheet edges: `left`/`right` at the top, `footLeft`/`footRight` where it meets the platen. */
-export const PAPER = Object.freeze({ left: 410, right: 1190, footLeft: 395, footRight: 1205 });
-/** Where the type slug meets the platen (body coordinates). The typebar head lands at y≈680–698. */
-export const PRINT = Object.freeze({ x: 800, y: 686 });
-/** Fixed parts the choreography drives: pivots come from the SVG's data-pivot attributes. */
+/** Shared design coordinates: HTML paper and all SVG layers are scaled as one scene. */
+export const ART = Object.freeze({ width: 1600, height: 1400, platenY: 705, baseY: 1295 });
+export const PAPER = Object.freeze({ left: 410, right: 1190, exitY: 706 });
+export const PRINT = Object.freeze({ y: 686 });
 export const PARTS = Object.freeze({
-  lever: { x: 340, y: 694, degrees: 16 },
-  typebar: { x: 800, y: 867, rest: 0.12 },
+  lever: { x: 340, y: 694, degrees: -14 },
+  typebar: { x: 0, y: 797, rest: 0.12 },
   knobs: [[293, 702], [1307, 702]],
   spools: [[411, 802], [1189, 802]],
-  keyDepth: 7,
-  spaceDepth: 6,
+  keyDepth: 7, spaceDepth: 6,
 });
-/** Relative duration of each stroke; the scroll distance is proportional to their sum. */
 export const DURATION = Object.freeze({ key: 1, space: 0.75, return: 3.2, tab: 1.6, repeat: 0.4 });
-
-export const clamp01 = (n) => Math.min(1, Math.max(0, Number.isFinite(n) ? n : 0));
+export const STRIKE = 0.36;
+export const clamp01 = n => Math.min(1, Math.max(0, Number.isFinite(n) ? n : 0));
 const span = (f, a, b) => clamp01((f - a) / (b - a));
-const smooth = (u) => u * u * (3 - 2 * u);
-const easeOut = (u) => 1 - (1 - u) * (1 - u);
+const smooth = u => u * u * (3 - 2 * u);
+const easeOut = u => 1 - (1 - u) * (1 - u);
+
+/** On-screen size of the typed body [CSS px]; the sheet's SVG size is derived from the scene scale. */
+export const BODY_PX = 14;
+// Width of the typed column in SVG units (the sheet is 780 wide), shared by every text size.
+const COLUMN = 636;
 
 export function sceneGeometry({ width, svgWidth }) {
   if (!(width > 0 && svgWidth > 0)) throw new RangeError('Scene dimensions must be positive.');
   const scale = svgWidth / ART.width;
-  const small = width < 600 || scale < 0.43;
-  const bodySize = small ? 36 : 22;
-  // Monospaced pitch (Courier advance = 0.6 em) and 1½ line spacing.
+  const small = width < 600;
+  // Rounded so tiny resizes keep the same layout.
+  const bodySize = Math.round(BODY_PX / scale * 4) / 4;
   const advance = bodySize * 0.6;
   return {
     scale, small, bodySize, advance,
-    lineHeight: advance * 2.5,
-    maxChars: small ? 22 : 36,
-    titleSize: small ? 45 : 38,
-    titleLeading: small ? 58 : 49,
+    lineHeight: bodySize * 1.55,
+    maxChars: Math.max(12, Math.floor(COLUMN / advance)),
+    titleSize: small ? 50 : 40,
+    titleLeading: small ? 64 : 52,
   };
 }
 
@@ -75,9 +75,20 @@ export function wrapText(text, maxCells) {
       else joined.push(unit);
     }
 
+    const fitted = joined.flatMap(unit => {
+      if (widthOf(unit) <= maxCells || [...unit].length < 3) return [unit];
+      const chunks = [];
+      let chunk = '';
+      for (const char of unit) {
+        if (widthOf(chunk + char) > maxCells && chunk) { chunks.push(chunk); chunk = ''; }
+        chunk += char;
+      }
+      if (chunk) chunks.push(chunk);
+      return chunks;
+    });
     const lines = [];
     let line = '';
-    for (const unit of joined) {
+    for (const unit of fitted) {
       if (unit === ' ' && !line) continue;
       const next = line + unit;
       if (widthOf(next.trimEnd()) > maxCells + 1e-9 && line.trim()) {
@@ -96,10 +107,38 @@ export function welcomeLines(text, small) {
   return wrapText(text, 12);
 }
 
+/** `[text](url)` inline links: the plain text plus link ranges (UTF-16 offsets) into it. */
+export function parseLinks(source) {
+  const links = [];
+  let text = '', last = 0;
+  for (const match of source.matchAll(/\[([^\]]+)\]\(([^)\s]+)\)/g)) {
+    if (/^(javascript|data|vbscript):/i.test(match[2])) continue; // left as written, never a live link
+    text += source.slice(last, match.index);
+    links.push({ start: text.length, end: text.length + match[1].length, href: match[2] });
+    text += match[1];
+    last = match.index + match[0].length;
+  }
+  return { text: text + source.slice(last), links };
+}
+
+/** Split text into plain and linked runs, for rendering the readable transcript. */
+export function linkSegments({ text, links = [] }) {
+  const segments = [];
+  let at = 0;
+  for (const { start, end, href } of links) {
+    if (start > at) segments.push({ text: text.slice(at, start) });
+    segments.push({ text: text.slice(start, end), href });
+    at = end;
+  }
+  if (at < text.length) segments.push({ text: text.slice(at) });
+  return segments;
+}
+
 /**
  * The body's light markup, one block per source line:
  * `# 見出し` centred heading, `## 見出し` left heading, `---` rule, empty line = blank line,
- * a line starting with `・` or `- ` is a list item.
+ * a line starting with `・` or `- ` is a list item, `[文字](URL)` is a link,
+ * `ラベル | URL` (or `ラベル | [文字](URL)`) is a link row: bold label left, link right-aligned.
  */
 export function parseBlocks(text) {
   return text.replace(/\r\n?/g, '\n').replace(/^\s*\n|\s+$/g, '').split('\n').map((raw) => {
@@ -107,39 +146,84 @@ export function parseBlocks(text) {
     if (!line) return { type: 'blank' };
     if (/^(-{3,}|ー{3,}|─{3,})$/.test(line)) return { type: 'rule' };
     const heading = line.match(/^(#{1,2})\s+(.+)$/);
-    if (heading) return { type: 'heading', level: heading[1].length, text: heading[2] };
+    if (heading) return { type: 'heading', level: heading[1].length, ...parseLinks(heading[2]) };
+    const row = line.match(/^(.+?)\s+\|\s+(.+)$/);
+    if (row) {
+      const bare = row[2].match(/^(https?:\/\/)(\S+)$/);
+      // A bare URL shows only its last path segment (the handle); a bare domain shows the domain.
+      const shown = bare?.[2].replace(/\/+$/, '').split('/').at(-1);
+      const value = bare ? { text: shown, links: [{ start: 0, end: shown.length, href: row[2] }] } : parseLinks(row[2]);
+      return { type: 'linkrow', label: row[1], ...value };
+    }
     // Keep a leading full-width space: it is the paragraph indent.
-    return { type: 'paragraph', text: raw.replace(/^[ \t]+|\s+$/g, '') };
+    return { type: 'paragraph', ...parseLinks(raw.replace(/^[ \t]+|\s+$/g, '')) };
+  });
+}
+
+/**
+ * Wrapped rows are in-order substrings of their block, so each row's offset into the block
+ * text can be found by searching forward; link ranges are then re-based onto the row.
+ */
+function withLinks(rows, block) {
+  if (!block.links?.length) return rows;
+  let cursor = 0;
+  return rows.map((row) => {
+    const offset = block.text.indexOf(row.text, cursor);
+    cursor = offset + row.text.length;
+    const links = block.links
+      .map(({ start, end, href }) => ({ start: Math.max(start, offset) - offset, end: Math.min(end, cursor) - offset, href }))
+      .filter(link => link.end > link.start);
+    return links.length ? { ...row, links } : row;
   });
 }
 
 /** Typed rows: `indent` is in cells (set with the tab key), `bold` rows are double-struck. */
 export function layoutRows(blocks, maxCells) {
-  return blocks.flatMap((block) => {
-    if (block.type === 'blank') return [{ text: '', indent: 0, bold: false }];
-    if (block.type === 'rule') return [{ text: '-'.repeat(maxCells), indent: 0, bold: false, rule: true }];
-    if (block.type === 'paragraph') {
-      // List items (・ or "- ") hang: wrapped lines are tabbed in under the item text.
-      const marker = block.text.match(/^(・|[-*] )/)?.[0];
-      if (!marker) return wrapText(block.text, maxCells).map(text => ({ text, indent: 0, bold: false }));
-      const hang = widthOf(marker);
-      const lines = wrapText(block.text.slice(marker.length), maxCells - hang);
-      return lines.map((text, i) => (i === 0
-        ? { text: marker + text, indent: 0, bold: false }
-        : { text, indent: hang, bold: false }));
-    }
-    const lines = wrapText(block.text, maxCells);
-    return lines.map(text => ({
-      text,
-      bold: true,
-      indent: block.level === 1 ? Math.max(0, (maxCells - widthOf(text)) / 2) : 0,
-    }));
-  });
+  // A rule touching a link row separates table rows rather than sections.
+  const near = (i, step) => { while (blocks[i]?.type === 'blank') i += step; return blocks[i]?.type === 'linkrow'; };
+  blocks = blocks.map((block, i) => block.type === 'rule' && (near(i - 1, -1) || near(i + 1, 1)) ? { ...block, table: true } : block);
+  return blocks.flatMap(block => block.type === 'linkrow' ? rowsOf(block, maxCells) : withLinks(rowsOf(block, maxCells), block));
+}
+
+/** Label, then a tab stop that right-aligns the value; on a narrow sheet the value drops to its own rows. */
+function linkRows(block, maxCells) {
+  const valueWidth = widthOf(block.text);
+  if (widthOf(block.label) + 2 + valueWidth <= maxCells) {
+    const tab = { at: block.label.length, to: maxCells - valueWidth };
+    return [{ text: block.label + block.text, indent: 0, bold: false, boldTo: block.label.length, tab,
+      links: block.links.map(link => ({ ...link, start: link.start + tab.at, end: link.end + tab.at })) }];
+  }
+  const label = wrapText(block.label, maxCells).map(text => ({ text, indent: 0, bold: true }));
+  const value = withLinks(wrapText(block.text, maxCells).map(text => ({ text, indent: maxCells - widthOf(text), bold: false })), block);
+  return [...label, ...value];
+}
+
+function rowsOf(block, maxCells) {
+  if (block.type === 'linkrow') return linkRows(block, maxCells);
+  if (block.type === 'blank') return [{ text: '', indent: 0, bold: false }];
+  // Section rules are underscores, which join into one straight line; table rules stay faint dashes.
+  if (block.type === 'rule') return [{ text: (block.table ? '-' : '_').repeat(maxCells), indent: 0, bold: false, rule: block.table ? 'table' : 'section' }];
+  if (block.type === 'paragraph') {
+    // List items (・ or "- ") hang: wrapped lines are tabbed in under the item text.
+    const marker = block.text.match(/^(・|[-*] )/)?.[0];
+    if (!marker) return wrapText(block.text, maxCells).map(text => ({ text, indent: 0, bold: false }));
+    const hang = widthOf(marker);
+    const lines = wrapText(block.text.slice(marker.length), maxCells - hang);
+    return lines.map((text, i) => (i === 0
+      ? { text: marker + text, indent: 0, bold: false }
+      : { text, indent: hang, bold: false }));
+  }
+  const lines = wrapText(block.text, maxCells);
+  return lines.map(text => ({
+    text,
+    bold: true,
+    indent: block.level === 1 ? Math.max(0, (maxCells - widthOf(text)) / 2) : 0,
+  }));
 }
 
 const LEFT_HAND = new Set('qwertasdfgzxcvb12345');
 const LETTERS = 'qwertyuiopasdfghjklzxcvbnm';
-const SYMBOL_KEYS = { ',': 'key-comma', '.': 'key-period', '-': 'key-minus', '=': 'key-equals', ';': 'key-semicolon', '/': 'key-slash' };
+const SYMBOL_KEYS = { '_': 'key-minus', ',': 'key-comma', '.': 'key-period', '-': 'key-minus', '=': 'key-equals', ';': 'key-semicolon', '/': 'key-slash' };
 
 /**
  * The SVG key(s) pressed for one character. Capitals hold the opposite-hand shift.
@@ -150,79 +234,65 @@ export function keysFor(char) {
   const lower = char.toLowerCase();
   const base = /^[a-z0-9]$/.test(lower) ? `key-${lower}` : SYMBOL_KEYS[char];
   if (!base) return [`key-${LETTERS[(char.codePointAt(0) * 7919) % LETTERS.length]}`];
-  if (char === lower) return [base];
+  if (char === lower && char !== '_') return [base];
   return [LEFT_HAND.has(lower) ? 'key-shift-right' : 'key-shift-left', base];
 }
 
-/**
- * Lay out the sheet and turn the body text into a timeline of strokes.
- * Each event stores the machine state at its start so any frame is O(log n).
- */
+/** Compile strokes once; every render is a pure sample, independent of direction. */
 export function buildScript({ welcome, body }, geometry) {
   const { lineHeight: L, advance, maxChars, bodySize } = geometry;
   const titles = welcomeLines(welcome, geometry.small);
-  // The welcome was typed just before: it sits two lines above the print line.
-  const lastTitleY = PRINT.y - 2 * L;
-  const titleY = lastTitleY - (titles.length - 1) * geometry.titleLeading;
-  const paperTop = titleY - geometry.titleSize - 92;
+  // Like a real sheet: the welcome sits two lines above the print line, with only a short top margin above it.
+  const titleY = PRINT.y - 2 * L - (titles.length - 1) * geometry.titleLeading;
+  const paperTop = titleY - geometry.titleSize - 50;
   const rows = layoutRows(parseBlocks(body), maxChars);
-  // Left margin: the carriage starts each line this far right of centre.
-  const marginX = maxChars * advance / 2;
-
-  const events = [];
-  const chars = [];
-  const state = { t: 0, x: 0, feed: 0, typed: 0, steps: 0 };
+  const marginX = (ART.width - maxChars * advance) / 2;
+  const events = [], chars = [];
+  const state = { t: 0, x: marginX, feed: 0, typed: 0, steps: 0, line: 0 };
   const push = (event, duration) => {
-    events.push({ ...event, start: state.t, duration, x0: state.x, feed0: state.feed, typed0: state.typed, steps0: state.steps });
+    events.push({ ...event, start: state.t, duration, x0: state.x, feed0: state.feed,
+      typed0: state.typed, steps0: state.steps, line0: state.line });
     state.t += duration;
   };
-  const carriageReturn = (feed) => {
-    push({ type: 'return', feed, toX: marginX }, DURATION.return);
-    state.x = marginX;
-    state.feed += feed;
-  };
-
-  carriageReturn(1);
   rows.forEach((row, index) => {
     if (row.indent > 0) {
-      const toX = marginX - row.indent * advance;
+      const toX = marginX + row.indent * advance;
       push({ type: 'tab', keys: ['key-tab'], toX }, DURATION.tab);
       state.x = toX;
     }
+    let at = 0;
     for (const char of row.text) {
-      const cells = cellsOf(char);
-      const blank = /\s/.test(char);
-      if (!blank) {
-        // Courier fills its 0.6 em cell; a Japanese glyph fills its 1 em pitch exactly.
-        const cellX = PRINT.x - state.x;
-        const glyphWidth = isWide(char) ? bodySize : advance;
-        chars.push({
-          char, cellX, x: cellX + (cells * advance - glyphWidth) / 2, y: PRINT.y + state.feed * L,
-          width: glyphWidth, bold: row.bold, rule: Boolean(row.rule),
-        });
+      if (row.tab && at === row.tab.at) {
+        const toX = marginX + row.tab.to * advance;
+        push({ type: 'tab', keys: ['key-tab'], toX }, DURATION.tab);
+        state.x = toX;
       }
+      const cells = cellsOf(char), blank = /\s/.test(char);
+      const href = row.links?.find(link => at >= link.start && at < link.end)?.href;
+      const bold = row.bold || at < (row.boldTo ?? 0);
+      at += char.length;
+      if (!blank) chars.push({ char, x: state.x, y: PRINT.y + state.feed * L,
+        width: cells * advance, bold, rule: row.rule ?? false, ...(href && { href }) });
       const duration = blank ? DURATION.space : row.rule ? DURATION.repeat : DURATION.key;
       push({ type: blank ? 'space' : 'key', keys: keysFor(char), cells }, duration);
       if (!blank) state.typed += 1;
-      state.x -= cells * advance;
+      state.x += cells * advance;
       state.steps += 1;
     }
-    carriageReturn(index === rows.length - 1 ? 2 : 1);
+    // Every return advances exactly ONE line, including the final presentation feed.
+    push({ type: 'return', toX: marginX, feed: 1 }, DURATION.return);
+    state.x = marginX;
+    state.feed += 1;
+    state.line = index + 1;
   });
-
-  return {
-    events, chars, rows, titles, titleY, paperTop,
-    lines: rows.map(row => row.text),
-    total: state.t,
-    totalFeed: state.feed * L,
-    paperBottom: ART.platenY + state.feed * L + 280,
-    lineHeight: L, advance, marginX,
-  };
+  return { events, chars, rows, titles, titleY, paperTop, bodySize,
+    lines: rows.map(row => row.text), total: state.t,
+    totalFeed: state.feed * L, paperBottom: PAPER.exitY + state.feed * L + 200,
+    lineHeight: L, advance, marginX };
 }
 
 function findEvent(events, t) {
-  let lo = 0;
-  let hi = events.length - 1;
+  let lo = 0, hi = events.length - 1;
   while (lo < hi) {
     const mid = (lo + hi + 1) >> 1;
     if (events[mid].start <= t) lo = mid; else hi = mid - 1;
@@ -230,85 +300,85 @@ function findEvent(events, t) {
   return events[lo];
 }
 
-/** The pose of every moving part at scroll progress 0–1. */
 export function frameAt(progress, script, radius = 31) {
   if (!(radius > 0)) throw new RangeError('Platen radius must be positive.');
-  const t = clamp01(progress) * script.total;
+  const p = clamp01(progress), t = p * script.total;
   const event = findEvent(script.events, t);
-  const f = progress >= 1 ? 1 : clamp01((t - event.start) / event.duration);
+  const f = p === 1 ? 1 : clamp01((t - event.start) / event.duration);
   const { advance, lineHeight } = script;
+  let x = event.x0, feed = event.feed0, typed = event.typed0, steps = event.steps0;
+  let typebar = PARTS.typebar.rest, lever = 0;
   const keys = {};
-  let x = event.x0;
-  let feed = event.feed0;
-  let typed = event.typed0;
-  let steps = event.steps0;
-  let lever = 0;
-  let typebar = PARTS.typebar.rest;
-
   if (event.type === 'return') {
-    // Push the lever: the ratchet turns the platen one line, then the carriage slides home.
-    lever = PARTS.lever.degrees * (smooth(span(f, 0, 0.18)) - smooth(span(f, 0.82, 1)));
-    feed += event.feed * smooth(span(f, 0.04, 0.3));
-    x += (event.toX - event.x0) * smooth(span(f, 0.22, 0.8));
+    lever = PARTS.lever.degrees * (smooth(span(f, 0, .18)) - smooth(span(f, .8, 1)));
+    x += (event.toX - event.x0) * smooth(span(f, .05, .6));
+    feed += smooth(span(f, .52, .94));
   } else if (event.type === 'tab') {
-    // The tab key releases the carriage, which runs to the next stop.
-    keys['key-tab'] = PARTS.keyDepth * (smooth(span(f, 0, 0.2)) - smooth(span(f, 0.7, 0.95)));
-    x += (event.toX - event.x0) * smooth(span(f, 0.15, 0.7));
+    keys['key-tab'] = PARTS.keyDepth * (smooth(span(f, 0, .2)) - smooth(span(f, .7, .95)));
+    x += (event.toX - event.x0) * smooth(span(f, .15, .7));
   } else {
     const isSpace = event.type === 'space';
-    const press = smooth(span(f, 0, 0.22)) - smooth(span(f, 0.5, 0.85));
-    const [first, second] = event.keys;
-    if (second) {
-      // Shift goes down first and is released last.
-      keys[first] = PARTS.keyDepth * (smooth(span(f, 0, 0.12)) - smooth(span(f, 0.78, 0.96)));
-      keys[second] = PARTS.keyDepth * press;
-    } else {
-      keys[first] = (isSpace ? PARTS.spaceDepth : PARTS.keyDepth) * press;
-    }
+    const press = smooth(span(f, 0, .22)) - smooth(span(f, .5, .85));
+    event.keys.forEach((key, i) => {
+      keys[key] = key === 'spacebar' ? PARTS.spaceDepth * press :
+        event.keys.length > 1 && i === 0 ? PARTS.keyDepth * (smooth(span(f, 0, .12)) - smooth(span(f, .78, .96))) : PARTS.keyDepth * press;
+    });
     if (!isSpace) {
-      // The arm accelerates into the platen, strikes at f = .36, then falls back to the basket.
-      const strike = 0.36;
-      const swing = f < strike ? span(f, 0.08, strike) ** 2 : 1 - easeOut(span(f, strike, 0.8));
+      const swing = f < STRIKE ? span(f, .08, STRIKE) ** 2 : 1 - easeOut(span(f, STRIKE, .8));
       typebar += (1 - PARTS.typebar.rest) * swing;
-      if (f >= strike) typed += 1;
+      if (f >= STRIKE - 1e-10) typed++;
     }
-    // Escapement: the carriage jumps one pitch (1 em for full-width) to the left as the key rises.
-    const step = smooth(isSpace ? span(f, 0.3, 0.55) : span(f, 0.42, 0.6));
-    x -= step * advance * event.cells;
+    const step = smooth(isSpace ? span(f, .3, .55) : span(f, .48, .8));
+    x += step * advance * event.cells;
     steps += step;
   }
-
-  const fed = feed * lineHeight;
-  return {
-    paperY: -fed,
-    knobDegrees: -fed / radius * 180 / Math.PI,
-    carriageX: x,
-    leverDegrees: lever,
-    typebarScale: typebar,
-    spoolDegrees: steps * 4,
-    keys,
-    typed,
-  };
+  // Expose the cell left edge and its centre separately; the guide and slug use the centre.
+  const headX = x;
+  const strikeOffset = event.type === 'key' ? event.cells * advance / 2 : advance / 2;
+  const paperY = -feed * lineHeight;
+  return { paperX: 0, paperY, headX, strikeX: headX + strikeOffset,
+    knobDegrees: paperY / radius * 180 / Math.PI,
+    rollerRadians: paperY / radius, leverDegrees: lever,
+    typebarScale: typebar, spoolDegrees: steps * 4, keys, typed,
+    line: Math.min(script.rows.length, Math.floor(feed + 1e-9)),
+    eventType: event.type, eventProgress: f };
 }
 
-export function paperPath(top, bottom) {
-  const controlY = top + (ART.platenY - top) * 0.34;
-  const { left, right, footLeft, footRight } = PAPER;
-  return `M ${left} ${top} Q 800 ${top - 12} ${right} ${top}
-    C ${right + 4} ${controlY} ${right + 6} 500 ${footRight} 703 L ${footRight} ${bottom}
-    L ${footLeft} ${bottom} L ${footLeft} 703 C ${left - 6} 500 ${left - 4} ${controlY} ${left} ${top} Z`;
-}
-
-/** A rotor viewed at an angle: preserve the oval silhouette while turning. */
-export function rotorTransform(cx, cy, degrees, ratio = 0.75) {
+/** Project a turning wheel without rotating its elliptical outline. */
+export function rotorTransform(cx, cy, degrees, ratio = .75) {
   return `translate(${cx} ${cy}) scale(1 ${ratio}) rotate(${degrees}) scale(1 ${1 / ratio}) translate(${-cx} ${-cy})`;
 }
-
-/** Small deterministic irregularities in ink density and alignment, like worn type. */
+/** Density variation only: registration stays exact. */
 export function inkJitter(index) {
-  const r = (n) => {
-    const v = Math.sin((index + 1) * 12.9898 + n * 78.233) * 43758.5453;
-    return v - Math.floor(v);
-  };
-  return { opacity: 0.78 + r(1) * 0.2, dx: (r(2) - 0.5) * 0.7, dy: (r(3) - 0.5) * 0.9 };
+  const v = Math.sin((index + 1) * 12.9898) * 43758.5453;
+  return { opacity: .83 + (v - Math.floor(v)) * .15 };
+}
+
+/**
+ * Sound cues on the same stroke timeline as `frameAt`, so scrubbing and sound stay in step.
+ * The margin bell rings once per line, six cells before the right margin, like a real machine.
+ */
+export function soundCues(script, maxChars) {
+  const bellX = script.marginX + (maxChars - 6) * script.advance;
+  const cues = [];
+  for (const e of script.events) {
+    const at = share => e.start + e.duration * share;
+    if (e.type === 'key') {
+      cues.push({ type: 'strike', at: at(STRIKE) });
+      if (e.x0 < bellX && e.x0 + e.cells * script.advance >= bellX) cues.push({ type: 'bell', at: at(.5) });
+    } else if (e.type === 'space') cues.push({ type: 'space', at: at(.25) });
+    else if (e.type === 'tab') cues.push({ type: 'tab', at: at(.15) });
+    else {
+      cues.push({ type: 'carriage', at: at(.05) });
+      cues.push({ type: 'feed', at: at(.6) });
+    }
+  }
+  return cues;
+}
+
+/** Cues crossed while playing forward from p0 to p1; rewinding is silent. */
+export function cuesBetween(cues, total, p0, p1) {
+  if (!(p1 > p0)) return [];
+  const t0 = clamp01(p0) * total, t1 = clamp01(p1) * total;
+  return cues.filter(cue => cue.at > t0 && cue.at <= t1);
 }

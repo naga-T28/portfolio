@@ -1,0 +1,19 @@
+{
+  "browser": "155.0.8059.82",
+  "results": [
+    "7 contact samples: moving head / glyph centre and baseline agree within 0.08 CSS px",
+    "Paper and existing text share exactly the same feed; knob rotates",
+    "Forward/reverse seeks and half-return stops reproduce text, keys, head, paper and rotation",
+    "Scrolling back to the top returns to the initial state",
+    "320 × 740: no horizontal overflow; registration valid after responsive reflow",
+    "375 × 812: no horizontal overflow; registration valid after responsive reflow",
+    "390 × 844: no horizontal overflow; registration valid after responsive reflow",
+    "414 × 896: no horizontal overflow; registration valid after responsive reflow",
+    "768 × 1024: no horizontal overflow; registration valid after responsive reflow",
+    "844 × 390: no horizontal overflow; registration valid after responsive reflow",
+    "1280 × 720: no horizontal overflow; registration valid after responsive reflow",
+    "Live reduced-motion switch releases the sticky stage and its scroll distance; switching back restores them; effects OFF shows the plain letter and ON restores the typewriter",
+    "JavaScript disabled: complete readable article without a scroll trap",
+    "No browser runtime errors"
+  ]
+}

@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="14-ribbon-spools">
+<title>リボンスプールと印字ヘッドに追従するリボン</title>
+<defs><linearGradient id="14-ribbon-spools-tw-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080f14"/>
+      <stop offset=".08" stop-color="#728080"/>
+      <stop offset=".18" stop-color="#f7f8f4"/>
+      <stop offset=".28" stop-color="#acafae"/>
+      <stop offset=".4" stop-color="#4e504f"/>
+      <stop offset=".52" stop-color="#111a1c"/>
+      <stop offset=".65" stop-color="#7d8888"/>
+      <stop offset=".72" stop-color="#ecedec"/>
+      <stop offset=".83" stop-color="#606363"/>
+      <stop offset="1" stop-color="#101719"/>
+    </linearGradient>
+<radialGradient id="14-ribbon-spools-tw-spool" cx=".45" cy=".32" r=".73">
+      <stop offset="0" stop-color="#585b58"/>
+      <stop offset=".11" stop-color="#aaada9"/>
+      <stop offset=".16" stop-color="#171916"/>
+      <stop offset=".25" stop-color="#373a37"/>
+      <stop offset=".8" stop-color="#151714"/>
+      <stop offset=".91" stop-color="#656863"/>
+      <stop offset="1" stop-color="#090b08"/>
+    </radialGradient>
+<linearGradient id="14-ribbon-spools-tw-enamel" x1=".1" y1="0" x2=".82" y2="1">
+      <stop offset="0" stop-color="#596063"/>
+      <stop offset=".055" stop-color="#292e2e"/>
+      <stop offset=".23" stop-color="#101515"/>
+      <stop offset=".51" stop-color="#070a0b"/>
+      <stop offset=".78" stop-color="#171c1c"/>
+      <stop offset="1" stop-color="#030505"/>
+    </linearGradient>
+<linearGradient id="14-ribbon-spools-tw-chrome-soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c5c7c5"/>
+      <stop offset=".12" stop-color="#e4e6e2"/>
+      <stop offset=".36" stop-color="#7d817f"/>
+      <stop offset=".67" stop-color="#404442"/>
+      <stop offset="1" stop-color="#161917"/>
+    </linearGradient></defs>
+<!-- The ribbon is drawn first so it runs behind both spools. --><g id="ribbon"><path id="ribbon-span" d="M503 814 454 721H498L1097 814" fill="none" stroke="#121b18" stroke-width="12"/><path id="ribbon-edge" d="M503 809 454 716H498L1097 809" fill="none" stroke="#817560" stroke-width=".8" opacity=".5"/></g><g id="ribbon-spools">
+    <g id="ribbon-spool-left" data-pivot="411 803">
+      <ellipse cx="411" cy="820" rx="122" ry="49" fill="#040504" opacity=".9"/>
+      <ellipse cx="411" cy="814" rx="120" ry="44" fill="url(#14-ribbon-spools-tw-chrome)" stroke="#111411" stroke-width="3"/>
+      <ellipse cx="411" cy="802" rx="120" ry="43" fill="url(#14-ribbon-spools-tw-spool)" stroke="#6e716b" stroke-width="1.2"/>
+      <ellipse cx="411" cy="802" rx="108" ry="36" fill="#181b17" stroke="#090b08" stroke-width="1.5"/>
+      <ellipse cx="411" cy="802" rx="38" ry="12.540000000000001" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="42" ry="13.860000000000001" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="46" ry="15.180000000000001" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="50" ry="16.5" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="54" ry="17.82" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="58" ry="19.14" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="62" ry="20.46" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="66" ry="21.78" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="70" ry="23.1" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="74" ry="24.42" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="78" ry="25.740000000000002" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="82" ry="27.060000000000002" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="86" ry="28.380000000000003" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="90" ry="29.700000000000003" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="94" ry="31.020000000000003" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="411" cy="802" rx="98" ry="32.34" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <g id="ribbon-spool-left-rotor"><ellipse cx="486.4651264937756" cy="806.9667332698765" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="435.48450631544176" cy="825.7024304802031" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="360.0193798216662" cy="820.7356972103266" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="335.5348735062244" cy="797.0332667301235" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="386.51549368455824" cy="778.2975695197969" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="461.9806201783339" cy="783.2643027896734" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="411" cy="803" rx="32" ry="13" fill="url(#14-ribbon-spools-tw-chrome)" stroke="#1d211b" stroke-width="2"/>
+      <ellipse cx="411" cy="800" rx="24" ry="9" fill="url(#14-ribbon-spools-tw-enamel)" stroke="#6e726b" stroke-width="1"/>
+      <g transform="translate(411 798) rotate(25)">
+        <ellipse cx="0" cy="1.5" rx="9" ry="5.6" fill="#040404" opacity=".7"/>
+        <ellipse cx="0" cy="0" rx="8" ry="5.6" fill="url(#14-ribbon-spools-tw-chrome-soft)" stroke="#171a18" stroke-width=".8"/>
+        <path d="M -4.8,0 L 4.8,0" fill="none" stroke="#141614" stroke-width="1.35" stroke-linecap="round"/>
+        <path d="M -4.0,-.8 L 4.0,-.8" fill="none" stroke="#f5f4e0" stroke-width=".55" opacity=".6"/>
+      </g></g>
+      <path d="M 314 789 Q 388 758 485 778" fill="none" stroke="#b7bbb4" stroke-width="1.1" opacity=".4"/>
+    </g>
+    <g id="ribbon-spool-right" data-pivot="1189 803">
+      <ellipse cx="1189" cy="820" rx="122" ry="49" fill="#040504" opacity=".9"/>
+      <ellipse cx="1189" cy="814" rx="120" ry="44" fill="url(#14-ribbon-spools-tw-chrome)" stroke="#111411" stroke-width="3"/>
+      <ellipse cx="1189" cy="802" rx="120" ry="43" fill="url(#14-ribbon-spools-tw-spool)" stroke="#6e716b" stroke-width="1.2"/>
+      <ellipse cx="1189" cy="802" rx="108" ry="36" fill="#181b17" stroke="#090b08" stroke-width="1.5"/>
+      <ellipse cx="1189" cy="802" rx="38" ry="12.540000000000001" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="42" ry="13.860000000000001" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="46" ry="15.180000000000001" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="50" ry="16.5" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="54" ry="17.82" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="58" ry="19.14" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="62" ry="20.46" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="66" ry="21.78" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="70" ry="23.1" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="74" ry="24.42" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="78" ry="25.740000000000002" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="82" ry="27.060000000000002" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="86" ry="28.380000000000003" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="90" ry="29.700000000000003" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="94" ry="31.020000000000003" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <ellipse cx="1189" cy="802" rx="98" ry="32.34" fill="none" stroke="#7b7e77" stroke-width=".6" opacity=".3"/>
+      <g id="ribbon-spool-right-rotor"><ellipse cx="1264.4651264937756" cy="806.9667332698765" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="1213.4845063154419" cy="825.7024304802031" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="1138.0193798216662" cy="820.7356972103266" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="1113.5348735062244" cy="797.0332667301235" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="1164.5154936845581" cy="778.2975695197969" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="1239.9806201783338" cy="783.2643027896734" rx="16" ry="5.7" fill="#030303" stroke="#696d66" stroke-width=".65"/>
+      <ellipse cx="1189" cy="803" rx="32" ry="13" fill="url(#14-ribbon-spools-tw-chrome)" stroke="#1d211b" stroke-width="2"/>
+      <ellipse cx="1189" cy="800" rx="24" ry="9" fill="url(#14-ribbon-spools-tw-enamel)" stroke="#6e726b" stroke-width="1"/>
+      <g transform="translate(1189 798) rotate(25)">
+        <ellipse cx="0" cy="1.5" rx="9" ry="5.6" fill="#040404" opacity=".7"/>
+        <ellipse cx="0" cy="0" rx="8" ry="5.6" fill="url(#14-ribbon-spools-tw-chrome-soft)" stroke="#171a18" stroke-width=".8"/>
+        <path d="M -4.8,0 L 4.8,0" fill="none" stroke="#141614" stroke-width="1.35" stroke-linecap="round"/>
+        <path d="M -4.0,-.8 L 4.0,-.8" fill="none" stroke="#f5f4e0" stroke-width=".55" opacity=".6"/>
+      </g></g>
+      <path d="M 1092 789 Q 1166 758 1263 778" fill="none" stroke="#b7bbb4" stroke-width="1.1" opacity=".4"/>
+    </g>
+  </g>
+</svg>

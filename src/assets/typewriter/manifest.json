@@ -1,0 +1,58 @@
+[
+  {
+    "file": "01-body-frame.svg",
+    "role": "固定本体・黒い鋳鉄フレーム"
+  },
+  {
+    "file": "02-paper-support.svg",
+    "role": "固定の紙背面支持板"
+  },
+  {
+    "file": "03-feed-roller.svg",
+    "role": "固定軸の紙送りローラー・回転する表面"
+  },
+  {
+    "file": "04-roller-knobs.svg",
+    "role": "左右の固定軸と回転ノブ"
+  },
+  {
+    "file": "05-print-head.svg",
+    "role": "左右に動く印字ヘッド・基準点は文字セル中央"
+  },
+  {
+    "file": "06-carriage-rail.svg",
+    "role": "固定レールと横移動する印字台車"
+  },
+  {
+    "file": "07-typebar-mechanism.svg",
+    "role": "タイプバーと打鍵機構"
+  },
+  {
+    "file": "08-keyboard-bed.svg",
+    "role": "キーボード台と連結軸"
+  },
+  {
+    "file": "09-keycaps.svg",
+    "role": "独立して押下できるキー群とスペースバー"
+  },
+  {
+    "file": "10-front-decoration.svg",
+    "role": "前面装飾・真鍮のトリム"
+  },
+  {
+    "file": "11-shadows.svg",
+    "role": "背景透過の接地影"
+  },
+  {
+    "file": "12-foreground-mask.svg",
+    "role": "紙の出口の前景遮蔽と紙上の接触影"
+  },
+  {
+    "file": "13-paper-front-frame.svg",
+    "role": "紙より手前の押さえフレーム"
+  },
+  {
+    "file": "14-ribbon-spools.svg",
+    "role": "リボンスプールと印字ヘッドに追従するリボン"
+  }
+]

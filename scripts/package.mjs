@@ -15,9 +15,10 @@ const release = path.join(root,'release');
 await rm(release,{ recursive:true,force:true });
 await mkdir(release,{ recursive:true });
 for (const dir of ['src','public','docs','tests','scripts','licenses','dist','dist-about']) {
-  await cp(path.join(root,dir),path.join(release,dir),{recursive:true});
+  await cp(path.join(root,dir),path.join(release,dir),{recursive:true,
+    filter: source => !['typewriter.svg', 'typewriter.original.svg'].includes(path.basename(source)) });
 }
-for (const file of ['package.json','package-lock.json','astro.config.mjs','tsconfig.json','.nvmrc','.gitignore','README_ja.md']) {
+for (const file of ['package.json','package-lock.json','astro.config.mjs','tsconfig.json','.nvmrc','.gitignore','README.md','README_ja.md']) {
   await copyFile(path.join(root,file),path.join(release,file));
 }
 console.log('Release folder ready:', release);

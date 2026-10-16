@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1400" width="1600" height="1400" aria-hidden="true" focusable="false" data-part="04-roller-knobs">
+<title>左右の固定軸と回転ノブ</title>
+<defs><linearGradient id="04-roller-knobs-tw-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080f14"/>
+      <stop offset=".08" stop-color="#728080"/>
+      <stop offset=".18" stop-color="#f7f8f4"/>
+      <stop offset=".28" stop-color="#acafae"/>
+      <stop offset=".4" stop-color="#4e504f"/>
+      <stop offset=".52" stop-color="#111a1c"/>
+      <stop offset=".65" stop-color="#7d8888"/>
+      <stop offset=".72" stop-color="#ecedec"/>
+      <stop offset=".83" stop-color="#606363"/>
+      <stop offset="1" stop-color="#101719"/>
+    </linearGradient>
+<radialGradient id="04-roller-knobs-tw-knob-face" cx=".33" cy=".25" r=".75">
+      <stop offset="0" stop-color="#474947"/>
+      <stop offset=".35" stop-color="#222421"/>
+      <stop offset=".7" stop-color="#151614"/>
+      <stop offset=".9" stop-color="#353833"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+<linearGradient id="04-roller-knobs-tw-chrome-soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c5c7c5"/>
+      <stop offset=".12" stop-color="#e4e6e2"/>
+      <stop offset=".36" stop-color="#7d817f"/>
+      <stop offset=".67" stop-color="#404442"/>
+      <stop offset="1" stop-color="#161917"/>
+    </linearGradient>
+<linearGradient id="04-roller-knobs-tw-front" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#363d3d"/>
+      <stop offset=".09" stop-color="#1d2424"/>
+      <stop offset=".35" stop-color="#090d0d"/>
+      <stop offset=".78" stop-color="#060909"/>
+      <stop offset=".94" stop-color="#171c1c"/>
+      <stop offset="1" stop-color="#020303"/>
+    </linearGradient></defs>
+<g id="roller-knobs"><g id="platen-knob-left" data-pivot="293 704">
+        <rect x="264" y="685" width="58" height="39" rx="10" fill="url(#04-roller-knobs-tw-chrome)"/>
+        <ellipse cx="293" cy="709" rx="40" ry="31" fill="#040404" stroke="#0f110f" stroke-width="2"/>
+        <ellipse cx="293" cy="702" rx="40" ry="31" fill="url(#04-roller-knobs-tw-knob-face)" stroke="#585b56" stroke-width="1.4"/>
+        <ellipse cx="293" cy="700" rx="27" ry="20" fill="url(#04-roller-knobs-tw-knob-face)" stroke="#0b0e0b" stroke-width="2"/>
+        <ellipse cx="288" cy="694" rx="17" ry="9" fill="#b9bbb4" opacity=".035"/>
+        <g id="platen-knob-left-rotor"><path d="M 331.00 702.00 l -2.00 -0.00" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 330.53 706.46 l -1.98 -0.31" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 329.14 710.81 l -1.90 -0.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 326.86 714.94 l -1.78 -0.91" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 323.74 718.75 l -1.62 -1.18" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 319.87 722.15 l -1.41 -1.41" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 315.34 725.06 l -1.18 -1.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 310.25 727.39 l -0.91 -1.78" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 304.74 729.11 l -0.62 -1.90" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 298.94 730.15 l -0.31 -1.98" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 293.00 730.50 l -0.00 -2.00" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 287.06 730.15 l 0.31 -1.98" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 281.26 729.11 l 0.62 -1.90" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 275.75 727.39 l 0.91 -1.78" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 270.66 725.06 l 1.18 -1.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 266.13 722.15 l 1.41 -1.41" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 262.26 718.75 l 1.62 -1.18" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 259.14 714.94 l 1.78 -0.91" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 256.86 710.81 l 1.90 -0.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 255.47 706.46 l 1.98 -0.31" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 255.00 702.00 l 2.00 -0.00" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 255.47 697.54 l 1.98 0.31" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 256.86 693.19 l 1.90 0.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 259.14 689.06 l 1.78 0.91" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 262.26 685.25 l 1.62 1.18" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 266.13 681.85 l 1.41 1.41" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 270.66 678.94 l 1.18 1.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 275.75 676.61 l 0.91 1.78" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 281.26 674.89 l 0.62 1.90" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 287.06 673.85 l 0.31 1.98" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 293.00 673.50 l 0.00 2.00" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 298.94 673.85 l -0.31 1.98" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 304.74 674.89 l -0.62 1.90" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 310.25 676.61 l -0.91 1.78" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 315.34 678.94 l -1.18 1.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 319.87 681.85 l -1.41 1.41" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 323.74 685.25 l -1.62 1.18" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 326.86 689.06 l -1.78 0.91" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 329.14 693.19 l -1.90 0.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 330.53 697.54 l -1.98 0.31" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <g transform="translate(293 700) rotate(25)">
+          <ellipse cx="0" cy="1.5" rx="8" ry="4.8999999999999995" fill="#040404" opacity=".7"/>
+          <ellipse cx="0" cy="0" rx="7" ry="4.8999999999999995" fill="url(#04-roller-knobs-tw-chrome-soft)" stroke="#171a18" stroke-width=".8"/>
+          <path d="M -4.2,0 L 4.2,0" fill="none" stroke="#141614" stroke-width="1.35" stroke-linecap="round"/>
+          <path d="M -3.5,-.8 L 3.5,-.8" fill="none" stroke="#f5f4e0" stroke-width=".55" opacity=".6"/>
+        </g>
+      </g></g><g id="platen-knob-right" data-pivot="1307 704">
+        <rect x="1278" y="685" width="58" height="39" rx="10" fill="url(#04-roller-knobs-tw-chrome)"/>
+        <ellipse cx="1307" cy="709" rx="40" ry="31" fill="#040404" stroke="#0f110f" stroke-width="2"/>
+        <ellipse cx="1307" cy="702" rx="40" ry="31" fill="url(#04-roller-knobs-tw-knob-face)" stroke="#585b56" stroke-width="1.4"/>
+        <ellipse cx="1307" cy="700" rx="27" ry="20" fill="url(#04-roller-knobs-tw-knob-face)" stroke="#0b0e0b" stroke-width="2"/>
+        <ellipse cx="1302" cy="694" rx="17" ry="9" fill="#b9bbb4" opacity=".035"/>
+        <g id="platen-knob-right-rotor"><path d="M 1345.00 702.00 l -2.00 -0.00" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1344.53 706.46 l -1.98 -0.31" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1343.14 710.81 l -1.90 -0.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1340.86 714.94 l -1.78 -0.91" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1337.74 718.75 l -1.62 -1.18" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1333.87 722.15 l -1.41 -1.41" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1329.34 725.06 l -1.18 -1.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1324.25 727.39 l -0.91 -1.78" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1318.74 729.11 l -0.62 -1.90" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1312.94 730.15 l -0.31 -1.98" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1307.00 730.50 l -0.00 -2.00" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1301.06 730.15 l 0.31 -1.98" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1295.26 729.11 l 0.62 -1.90" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1289.75 727.39 l 0.91 -1.78" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1284.66 725.06 l 1.18 -1.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1280.13 722.15 l 1.41 -1.41" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1276.26 718.75 l 1.62 -1.18" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1273.14 714.94 l 1.78 -0.91" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1270.86 710.81 l 1.90 -0.62" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1269.47 706.46 l 1.98 -0.31" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1269.00 702.00 l 2.00 -0.00" fill="none" stroke="#8b8d87" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1269.47 697.54 l 1.98 0.31" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1270.86 693.19 l 1.90 0.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1273.14 689.06 l 1.78 0.91" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1276.26 685.25 l 1.62 1.18" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1280.13 681.85 l 1.41 1.41" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1284.66 678.94 l 1.18 1.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1289.75 676.61 l 0.91 1.78" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1295.26 674.89 l 0.62 1.90" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1301.06 673.85 l 0.31 1.98" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1307.00 673.50 l 0.00 2.00" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1312.94 673.85 l -0.31 1.98" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1318.74 674.89 l -0.62 1.90" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1324.25 676.61 l -0.91 1.78" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1329.34 678.94 l -1.18 1.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1333.87 681.85 l -1.41 1.41" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1337.74 685.25 l -1.62 1.18" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1340.86 689.06 l -1.78 0.91" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1343.14 693.19 l -1.90 0.62" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <path d="M 1344.53 697.54 l -1.98 0.31" fill="none" stroke="#080a08" stroke-width="1.2" opacity=".7"/>
+        <g transform="translate(1307 700) rotate(25)">
+          <ellipse cx="0" cy="1.5" rx="8" ry="4.8999999999999995" fill="#040404" opacity=".7"/>
+          <ellipse cx="0" cy="0" rx="7" ry="4.8999999999999995" fill="url(#04-roller-knobs-tw-chrome-soft)" stroke="#171a18" stroke-width=".8"/>
+          <path d="M -4.2,0 L 4.2,0" fill="none" stroke="#141614" stroke-width="1.35" stroke-linecap="round"/>
+          <path d="M -3.5,-.8 L 3.5,-.8" fill="none" stroke="#f5f4e0" stroke-width=".55" opacity=".6"/>
+        </g>
+      </g></g><g id="carriage-return" data-pivot="340 694">
+      <ellipse cx="340" cy="693" rx="20" ry="14" fill="url(#04-roller-knobs-tw-chrome)" stroke="#151816" stroke-width="2"/>
+      <path d="M 337 690 L 271 630 Q 264 624 250 621 L 169 605 Q 157 603 156 595 L 157 585 L 176 585 L 259 605 Q 274 608 283 617 L 345 677 Z" fill="url(#04-roller-knobs-tw-chrome)" stroke="#212522" stroke-width="1.6"/>
+      <path d="M 340 683 L 276 620 Q 269 614 256 611 L 171 591" fill="none" stroke="#f2f3ed" stroke-width="2.6" stroke-linecap="round" opacity=".8"/>
+      <path d="M 145 570 Q 179 569 203 581 Q 210 591 200 606 Q 174 605 142 592 Q 135 586 145 570 Z" fill="url(#04-roller-knobs-tw-front)" stroke="#0b0d0b" stroke-width="2"/>
+      <path d="M 147 574 Q 174 575 199 584" fill="none" stroke="#7c7e79" stroke-width="2" opacity=".6"/>
+      <g transform="translate(340 690) rotate(30)">
+        <ellipse cx="0" cy="1.5" rx="9" ry="5.6" fill="#040404" opacity=".7"/>
+        <ellipse cx="0" cy="0" rx="8" ry="5.6" fill="url(#04-roller-knobs-tw-chrome-soft)" stroke="#171a18" stroke-width=".8"/>
+        <path d="M -4.8,0 L 4.8,0" fill="none" stroke="#141614" stroke-width="1.35" stroke-linecap="round"/>
+        <path d="M -4.0,-.8 L 4.0,-.8" fill="none" stroke="#f5f4e0" stroke-width=".55" opacity=".6"/>
+      </g>
+    </g></g>
+</svg>

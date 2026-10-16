@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-16",
+  "scope": "typewriter section",
+  "framework": "Astro 7.4.0",
+  "motion": "GSAP 3.15.0 / ScrollTrigger",
+  "preserved": ["src/pages/index.astro route", "Arial UI", "Courier + Japanese serif print", "existing body copy", "light background", "detailed vintage metal and keyboard vectors"],
+  "design": "warm paper, black metal, restrained brass; no page-wide restructuring",
+  "files": ["src/styles/global.css", "src/components/TypewriterIntro.astro", "src/config/typewriter.js", "package.json"]
+}
