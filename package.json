@@ -1,0 +1,21 @@
+{
+  "name": "naga-t-typewriter-intro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Astro + GSAP introduction for naga-t.jp, with a layered SVG typewriter and physical paper feeding.",
+  "engines": { "node": ">=22.22.0" },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:about": "astro build --base /about/ --outDir dist-about",
+    "preview": "astro preview",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check src/scripts/typewriter.js && node --check src/scripts/motion.js && npm test",
+    "package": "node scripts/package.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.0",
+    "gsap": "3.15.0"
+  }
+}

@@ -1,0 +1,53 @@
+---
+import typewriterSvg from '../assets/typewriter.svg?raw';
+import { typewriterConfig } from '../config/typewriter.js';
+import { parseBlocks } from '../scripts/motion.js';
+
+const escapeXml = (value: string) => value.replace(/[&<>"']/g, (char) => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;',
+}[char]!));
+
+// The typed sheet, as real document structure for assistive technology and search engines.
+const blocks = parseBlocks(typewriterConfig.body).filter(block => block.type !== 'blank');
+
+const art = typewriterSvg
+  .replace(/<\?xml[^>]*\?>\s*/, '')
+  .replace('<!--WELCOME_CONTENT-->', `<text id="welcome-print" x="800" y="245" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="38" fill="#302f2a" letter-spacing="0.25">${escapeXml(typewriterConfig.welcome)}</text>`);
+---
+
+<section class="typewriter-story" data-typewriter-story data-settings={JSON.stringify(typewriterConfig)} aria-label="タイプライターのイントロダクション">
+  <div class="typewriter-stage" data-typewriter-stage>
+    <header class="masthead">
+      <a class="wordmark" href={import.meta.env.BASE_URL} aria-label="naga-t.jp の先頭へ">NAGA-T<span class="wordmark__dot">.</span></a>
+      <button class="rewind" type="button" data-rewind aria-label="紙を最初の位置に戻す" disabled>
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true">
+          <path d="M4 7h8a5 5 0 0 1 0 10H9M4 7l4-4M4 7l4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>はじめに戻る</span>
+      </button>
+    </header>
+
+    <h1 class="visually-hidden" lang="en">{typewriterConfig.welcome}</h1>
+    <div class="visually-hidden">
+      {blocks.map(block =>
+        block.type === 'rule' ? <hr /> :
+        block.type === 'heading' ? (block.level === 1 ? <h2>{block.text}</h2> : <h3>{block.text}</h3>) :
+        <p>{block.text}</p>
+      )}
+    </div>
+    <div class="typewriter-machine" data-typewriter-machine aria-hidden="true">
+      <Fragment set:html={art} />
+    </div>
+
+    <div class="scroll-cue" data-scroll-cue aria-hidden="true">
+      <span class="scroll-cue__stroke"></span>
+      <span>スクロールしてタイプする</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { mountTypewriters } from '../scripts/typewriter.js';
+  mountTypewriters();
+  document.addEventListener('astro:page-load', mountTypewriters);
+</script>

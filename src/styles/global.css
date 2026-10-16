@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+:root {
+  color-scheme: light;
+  --scene-background: #ffffff;
+  --ink: #343730;
+  --muted: #73756b;
+  font-family: Arial, "Helvetica Neue", "Noto Sans JP", sans-serif;
+  font-synthesis: none;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { margin: 0; background: var(--scene-background); }
+body { margin: 0; color: var(--ink); }
+body, main { min-width: 280px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+a { color: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid #52604e; outline-offset: 6px; }
+::selection { background: #c7cebd; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.typewriter-story { position: relative; isolation: isolate; }
+.typewriter-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 280px;
+  overflow: hidden;
+  background: var(--scene-background);
+}
+
+.masthead {
+  position: absolute;
+  inset: clamp(20px, 4.2vh, 38px) clamp(24px, 4vw, 64px) auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 2;
+}
+.wordmark {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  line-height: 1;
+  text-decoration: none;
+}
+.wordmark__dot { color: #65725c; }
+.rewind {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  border-bottom: 1px solid #969b8d66;
+  padding: 9px 0;
+  color: #535b4e;
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: color .2s;
+}
+.rewind:disabled { visibility: hidden; }
+.rewind:hover { color: #111b0b; }
+
+.typewriter-machine {
+  position: absolute;
+  --machine-width: min(1040px, 118vw, calc((100svh - 170px) * 2.32));
+  /* Pin the base (SVG y≈1290 of 1400, just below the feet and body curve) to the bottom edge of the stage. */
+  bottom: calc(var(--machine-width) * -110 / 1600);
+  left: 50%;
+  width: var(--machine-width);
+  aspect-ratio: 1600 / 1400;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+@supports not (height: 1svh) {
+  .typewriter-machine { --machine-width: min(1040px, 118vw, calc((100vh - 170px) * 2.32)); }
+}
+.typewriter-machine > svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+/* The SVG viewport stays fixed; only #paper-feed moves inside it. */
+.typewriter-machine #welcome-print { font-kerning: none; }
+.typewriter-machine #paper-feed { will-change: transform; }
+.typewriter-machine #print-content .bold { stroke: #2b2a25; stroke-width: .7px; paint-order: stroke; }
+
+.scroll-cue {
+  position: absolute;
+  top: 50%;
+  right: clamp(14px, 2.4vw, 40px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  color: #73786c;
+  font-size: 10px;
+  letter-spacing: .13em;
+  pointer-events: none;
+}
+.scroll-cue__stroke { width: 1px; height: 25px; background: currentColor; opacity: .7; }
+.typewriter-story[data-feed-started="true"] .scroll-cue { opacity: 0; }
+
+@media (max-width: 599px) {
+  .masthead { inset: 23px 23px auto; }
+  .wordmark { font-size: 12px; }
+  .rewind { font-size: 10px; }
+  .scroll-cue { right: 10px; font-size: 9px; gap: 8px; }
+}
+
+@media (max-height: 500px) {
+  .masthead { inset: 16px 22px auto; }
+  .scroll-cue { font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue, .rewind { display: none; }
+  .typewriter-machine #paper-feed { will-change: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
